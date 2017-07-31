@@ -8,10 +8,8 @@ cursor.execute("SELECT VERSION()")
 version = cursor.fetchone()
 
 print("Version: %s" %version)
-def addItem():
+def addItem(id,name):
 
-    id = input("Enter ID number: ")
-    name = input("Enter product name: ")
     try:
         #input inventory data
         cursor.execute("""INSERT INTO INVENTORY VALUES (%s, %s)""", (id, name))
@@ -23,8 +21,7 @@ def addItem():
         print("Error")
         db.rollback()
 
-def search():
-    QName = input("What item are you searching for?: ")
+def search(QName):
 
     try:
         cursor.execute("""SELECT * FROM INVENTORY WHERE NAME = %s""", (QName))
@@ -40,8 +37,7 @@ def displayAll():
     for each in data:
         print(each[1])
 
-def remove():
-    DName = input("What item do you want to remove?: ")
+def remove(DName):
     try:
         cursor.execute("""DELETE FROM INVENTORY WHERE NAME = %s""", (DName))
         db.commit()
@@ -49,6 +45,3 @@ def remove():
     except:
         ("Item not in library")
 
-#cleanup
-cursor.close()
-db.close()
