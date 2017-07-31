@@ -9,7 +9,8 @@ def printOptions():
     print("2: Remove item from library")
     print("3: Search for item in library")
     print("4: Display all items in library")
-    print("5: Exit")
+    print("5: Keyword search")
+    print("6: Exit")
 
 def select(choice):
     if choice == 1:
@@ -27,6 +28,9 @@ def select(choice):
         displayAll()
 
     if choice == 5:
+        keyword(input("What keyword?: "))
+
+    if choice == 6:
         sys.exit(1)
 
 
@@ -37,13 +41,13 @@ def main():
         printOptions()
         while cond:
             try:
-                choice = int(input("Select an option(1-5): "))
-                if choice not in [1, 2, 3, 4, 5]:
-                    print("Error, select option 1-5")
+                choice = int(input("Select an option(1-6): "))
+                if choice not in [1, 2, 3, 4, 5, 6]:
+                    print("Error, select option 1-6")
                 else:
                     cond = False
             except:
-                print("Error, select option 1-5")
+                print("Error, select option 1-6")
 
         print()
         select(choice)
