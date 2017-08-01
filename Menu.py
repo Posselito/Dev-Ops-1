@@ -22,7 +22,10 @@ def select(choice):
         remove(input("What item do you want to remove?: "))
 
     if choice == 3:
-        search(input("What item are you searching for?: "))
+        if search(input("What item are you searching for?: ")) == True:
+            print("Item in Library")
+        else:
+            print("Item not in Library")
 
     if choice == 4:
         displayAll()

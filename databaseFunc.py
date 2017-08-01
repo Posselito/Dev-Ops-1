@@ -39,18 +39,17 @@ def remove(DName):
 
 def displayAll():
     results = fetchAll()
+    i = 0
     for each in results:
         print(each)
+        i += 1
+    return i
 
 def search(QName):
     items = fetchAll()
     for each in items:
         if QName == each:
-            i = 1
-    if i == 1:
-        print("Item in library")
-    else:
-        print("Item not in library")
+            return True
 
 
 def keyword(KName):
@@ -63,3 +62,4 @@ def keyword(KName):
         print(each)
     if results == None:
         print("No results")
+    return results
