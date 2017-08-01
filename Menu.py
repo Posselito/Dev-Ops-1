@@ -18,22 +18,22 @@ def select(choice):
         name = input("What is the name?: ")
         addItem(id,name)
 
-    if choice == 2:
+    elif choice == 2:
         remove(input("What item do you want to remove?: "))
 
-    if choice == 3:
+    elif choice == 3:
         if search(input("What item are you searching for?: ")) == True:
             print("Item in Library")
         else:
             print("Item not in Library")
 
-    if choice == 4:
+    elif choice == 4:
         displayAll()
 
-    if choice == 5:
+    elif choice == 5:
         keyword(input("What keyword?: "))
 
-    if choice == 6:
+    elif choice == 6:
         sys.exit(1)
 
 
@@ -57,8 +57,3 @@ def main():
         print()
     return 0
 
-main()
-
-#cleanup
-cursor.close()
-db.close()
