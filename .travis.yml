@@ -3,7 +3,6 @@ python:
   - 3.6
 
 install:
-  - pip3 install unittest
   - pip3 install pytest-cov
 
 script:
