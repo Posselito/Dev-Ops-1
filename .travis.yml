@@ -3,8 +3,8 @@ python:
   - 3.6
 
 install:
-  - pip install unittest
-  - pip install pytest-cov
+  - pip3 install unittest
+  - pip3 install pytest-cov
 
 script:
   - pytest --cov=. dbTest.py menuTest.py
