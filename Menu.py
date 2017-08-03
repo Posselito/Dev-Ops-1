@@ -35,6 +35,9 @@ def select(choice):
 
     elif choice == 6:
         sys.exit(1)
+        # cleanup
+        cursor.close()
+        db.close()
 
 
 
