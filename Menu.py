@@ -9,7 +9,7 @@ def printOptions():
     print("2: Remove item from library")
     print("3: Search for item in library")
     print("4: Display all items in library")
-    print("5: Keyword search")
+    print("5: Keyword find")
     print("6: Exit")
 
 def select(choice):
